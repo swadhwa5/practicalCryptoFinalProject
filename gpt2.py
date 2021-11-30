@@ -10,7 +10,7 @@ def main():
     sequence = "Hi"
     inputs = tokenizer.encode(sequence, return_tensors='pt')
     # we pass a maximum output length of 200 tokens
-    outputs = model.generate(inputs, max_length=200, do_sample=True, temperature=4.0)
+    outputs = model.generate(inputs, max_length=200, do_sample=True, temperature=4.0, top_k=50)
     text = tokenizer.decode(outputs[0], skip_special_tokens=True)
     print(text)
     password_words = text.split()[:5] # first 5 words
@@ -25,9 +25,6 @@ def main():
             password.append(password_words[i][last_elem])
 
     print(''.join(password))
-
-
-
 
 
 if __name__ == "__main__":
