@@ -85,11 +85,11 @@ def main():
     if add_number_in_sentence == "true":
         print("You have chosen to add digits to your sentence!")
         # have parameters to include numbers in the password
-        num_random_positions = random.sample(range(1, 4), 1)[0]
-        random_positions = random.sample(range(1, 7), num_random_positions)
+        num_random_positions = random.sample(range(1, 5), 1)[0]
+        random_positions = random.sample(range(1, 8), num_random_positions)
         random_positions.sort()
         random_digit = random.sample(range(0, 10), 1)[0]
-        print("Add digit:", random_digit, "before words:", random_positions)
+        print("Add digit:", random_digit, "at positions:", random_positions)
         for i in range(num_random_positions):
             final_password_array.insert((2 * (random_positions[i] - 1)) + i, str(random_digit))
 
